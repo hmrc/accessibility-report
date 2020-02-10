@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.summary {
+    background: #e3e3e3;
+    max-width: 800px;
+    border-bottom: 1px solid black;
+    dl {
+        margin: 0;
+        padding: 0;
+        &:nth-child(even) {
+            dt, dd {
+                background: #f3f3f3;
+            }
+        }
+        dt, dd {
+            display: inline-block;
+            border: 1px solid black;
+            border-bottom: 0 none;
+
+            margin: 0;
+            padding: 0.3em;
+        }
+        dt {
+            width: 40%;
+        }
+        dd {
+            width: 60%;
+        }
+    }
+}

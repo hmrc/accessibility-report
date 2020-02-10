@@ -1,8 +1,36 @@
 doctype html
 html(lang="en")
   head
-    title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
+    title HMRC Accessibility report for #{original.testSuite}
+    style=assets.stylesheet
   body
-    h1 This is the report for #{name}
+    h1 HMRC Accessibility report for #{original.testSuite}
+    article
+      h2 Summary of Violations
+        .summary
+          dl
+            dt Test Suite Name
+            dd=original.testSuite
+          dl
+            dt Build No
+            dd=original.buildNo
+          dl
+            dt Total Error Count
+            dd=totalErrorCount
+          if axe
+            dl
+              dt Axe Error Count
+              dd=axe.total
+          if vnu
+            dl
+              dt VNU Error Count
+              dd=vnu.total
+          if axe
+            dl
+              dt Axe Version
+              dd=axe.version
+          if vnu
+            dl
+              dt VNU Version
+              dd=vnu.version
+
