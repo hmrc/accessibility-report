@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hmrc/accessibility-report/issues"
   },
-  "homepage": "https://github.com/hmrc/accessibility-report#readme"
+  "homepage": "https://github.com/hmrc/accessibility-report#readme",
+  "dependencies": {
+    "pug": "^2.0.4"
+  }
 }

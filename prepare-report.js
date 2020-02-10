@@ -1,13 +1,25 @@
 #!/usr/bin/env node
 
-var stdin = process.openStdin();
+const preocessInputData = new Promise((res, rej) => {
+    const stdin = process.openStdin();
 
-var data = "";
+    let data = "";
 
-stdin.on('data', function(chunk) {
-    data += chunk;
-});
+    stdin.on('data', function(chunk) {
+        data += chunk;
+    });
 
-stdin.on('end', function() {
-    console.log("The data you provided was:\n\n" + data + "\n\n The report would be output here.");
-});
+    stdin.on('end', function() {
+        res(data)
+    });
+})
+
+preocessInputData
+    .then(JSON.parse)
+    .then(data => console.log('test suite: ', data.testSuite))
+    .catch(e => {
+        console.error('Something went wrong when preparing report')
+        console.error('error was [%s] with message [%s]', e.type, e.message)
+        console.error(e.stack)
+        process.exit(1)
+    })
