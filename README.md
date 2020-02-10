@@ -1,7 +1,20 @@
 
 # accessibility-report
 
-This is a placeholder README.md for a new repository
+## How to run locally
+
+### Install dependencies
+
+```
+nvm use
+npm install
+```
+
+The easiest way to get started is to use an example data input.  For example:
+
+```
+cat example-inputs/1.json | ./prepare-report.js
+```
 
 ### License
 
