@@ -13,8 +13,10 @@ npm install
 The easiest way to get started is to use an example data input.  For example:
 
 ```
-cat example-inputs/1.json | ./prepare-report.js
+cat example-inputs/1.json | ./prepare-report.js > example-output.html
 ```
+
+After running this you can open `example-output.html` in the browser.
 
 ### License
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const pug = require('pug')
 
 const preocessInputData = new Promise((res, rej) => {
     const stdin = process.openStdin();
@@ -16,7 +17,9 @@ const preocessInputData = new Promise((res, rej) => {
 
 preocessInputData
     .then(JSON.parse)
-    .then(data => console.log('test suite: ', data.testSuite))
+    .then(data => ({name: data.testSuite}))
+    .then(model => pug.renderFile('template.pug', model))
+    .then(console.log)
     .catch(e => {
         console.error('Something went wrong when preparing report')
         console.error('error was [%s] with message [%s]', e.type, e.message)
