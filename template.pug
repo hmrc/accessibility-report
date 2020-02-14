@@ -17,20 +17,46 @@ html(lang="en")
           dl
             dt Total Error Count
             dd=totalErrorCount
-          if axe
+          each tool in tools
             dl
-              dt Axe Error Count
-              dd=axe.total
-          if vnu
+              dt #{tool.name} Error Count
+              dd=tool.total
+          each tool in tools
             dl
-              dt VNU Error Count
-              dd=vnu.total
-          if axe
-            dl
-              dt Axe Version
-              dd=axe.version
-          if vnu
-            dl
-              dt VNU Version
-              dd=vnu.version
+              dt #{tool.name} Version
+              dd=tool.version
 
+    article
+      h2 The issues raised
+      nav.tabs
+        ul
+          each tool in tools
+            li.tab
+             a(href="#" + tool.techName)= tool.name
+      each tool in tools
+        div.revealed-by-tab(id=tool.techName)
+          table.violations
+            thead
+              tr
+                th.path URL Path
+                th.code Code
+                th.description Description
+                th.snippet Snippet
+                th.alert Alert Level
+                th.severity Severity
+                th.info Further Information
+            tbody
+              each path in tool.paths
+                each page in path.pages
+                  each violation in page.violations
+                    tr
+                      td.path
+                        a(href=violation.capturedPage,target='_blank')= page.url
+                      td.code=violation.code
+                      td.description=violation.description
+                      td.snippet
+                        span.code=violation.snippet
+                      td.alert=violation.alertLevel
+                      td.severity=violation.severity
+                      td.info
+                        a(href=violation.helpUrl,target='_blank') More information about this violation

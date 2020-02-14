@@ -30,3 +30,26 @@
         }
     }
 }
+
+.violations {
+    .code, .alert, .severity, .info {
+        width: 8% // 32%
+    }
+
+    .path {
+        width: 12% // 44%
+    }
+
+    .snippet {
+        width: ((8%*4+12)/2) // 69%
+        pre {
+            width: auto;
+            max-width: 100%;
+        }
+    }
+
+    .description {
+        width: ((8%*4+12)/2)
+    }
+}
+

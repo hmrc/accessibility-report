@@ -17,54 +17,51 @@ const preocessInputData = new Promise((res, rej) => {
 })
 
 const prepareModel = original => {
-    const out = {}
-    let totalErrorCount = 0
-    const vnuData = original.tools.find(x => x.tool === 'vnu')
-    const axeData = original.tools.find(x => x.tool === 'axe')
-    if (vnuData) {
-        out.vnu = {
-            total: vnuData.summary.errorCount,
-            version: vnuData.version
-        }
-        totalErrorCount += out.vnu.total
-    }
-    if (axeData) {
-        out.axe = {
-            total: axeData.summary.errorCount,
-            version: axeData.version
-        }
-        totalErrorCount += out.axe.total
-    }
-    return Object.assign({}, out, {original, totalErrorCount})
+    let errorCountReducer = (acc, cur) => acc + cur.summary.errorCount;
+    const tools = original.tools.map(x => ({
+        total: x.summary.errorCount,
+        techName: x.tool,
+        version: x.version,
+        name: x.name,
+        paths: x.paths
+    }))
+    const totalErrorCount = original.tools.reduce(errorCountReducer, 0)
+
+    return Object.assign({}, {original, totalErrorCount, tools})
 }
 
 const includeSass = model => (new Promise((res, rej) => {
-        sass.render({
-                file: 'assets/style.scss'
-            },
-            (err, result) => {
-                if (err) {
-                    rej(err)
-                } else {
-                    res(result.css.toString().split('\n').join(''))
-                }
-            })
-    }))
-        .then(stylesheet => Object.assign(
-            {},
-            model,
+    sass.render({
+            file: 'assets/style.scss'
+        },
+        (err, result) => {
+            if (err) {
+                rej(err)
+            } else {
+                res(result.css.toString().split('\n').join(''))
+            }
+        })
+}))
+    .then(stylesheet => Object.assign(
+        {},
+        model,
 
-            {
-                assets: Object.assign(
-                    {},
-                    model.assets,
-                    {stylesheet}
-                )}))
+        {
+            assets: Object.assign(
+                {},
+                model.assets,
+                {stylesheet}
+            )
+        }))
 
 preocessInputData
     .then(JSON.parse)
     .then(prepareModel)
     .then(includeSass)
+    .then(x => {
+        console.log(`<!-- \n\n ${JSON.stringify(x, null, 2)} \n\n -->`)
+        return x
+    })
     .then(model => pug.renderFile('template.pug', model))
     .then(console.log)
     .catch(e => {
