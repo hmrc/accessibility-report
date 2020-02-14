@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const pug = require('pug')
-const sass = require('node-sass');
+const sass = require('node-sass')
+const fs = require('fs')
+const path = require('path')
 
 const preocessInputData = new Promise((res, rej) => {
     const stdin = process.openStdin();
@@ -30,6 +32,18 @@ const prepareModel = original => {
     return Object.assign({}, {original, totalErrorCount, tools})
 }
 
+const includeJs = model => (new Promise((res, rej) => {
+    fs.readFile(path.join(__dirname, 'assets', 'report.js'), 'utf8', (err, contents) => {
+        if (err) {
+            rej(err)
+        } else {
+            const updatedModel = Object.assign({}, model);
+            updatedModel.assets = Object.assign({}, model.assets, {javascript: contents})
+            res(updatedModel)
+        }
+    })
+}))
+
 const includeSass = model => (new Promise((res, rej) => {
     sass.render({
             file: 'assets/style.scss'
@@ -58,6 +72,7 @@ preocessInputData
     .then(JSON.parse)
     .then(prepareModel)
     .then(includeSass)
+    .then(includeJs)
     .then(x => {
         console.log(`<!-- \n\n ${JSON.stringify(x, null, 2)} \n\n -->`)
         return x
