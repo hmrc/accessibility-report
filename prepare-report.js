@@ -22,6 +22,7 @@ const prepareModel = original => {
     let errorCountReducer = (acc, cur) => acc + cur.summary.errorCount;
     const tools = original.tools.map(x => ({
         total: x.summary.errorCount,
+        pageCount: x.summary.pageCount,
         techName: x.tool,
         version: x.version,
         name: x.name,
