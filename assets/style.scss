@@ -43,15 +43,15 @@ body {
 }
 
 .violations {
-  .code, .alert, .severity, .info {
-    width: 8% // 32%
+  .code, .alert, .severity {
+    width: 5% // 32%
   }
 
   .path {
     width: 12% // 44%
   }
 
-  .snippet {
+  .snippet, .info {
     width: ((8%*4+12)/2) // 69%
     pre {
       width: auto;

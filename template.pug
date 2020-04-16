@@ -1,19 +1,21 @@
 doctype html
 html(lang="en")
   head
+    meta(charset="UTF-8")
     title HMRC Accessibility report for #{original.testSuite}
     style=assets.stylesheet
   body
     h1 HMRC Accessibility report for #{original.testSuite}
     article
-      h2 Summary of Violations
+      h2 Summary
         .summary
           dl
             dt Test Suite Name
             dd=original.testSuite
           dl
             dt Build No
-            dd=original.buildNo
+            dd
+              a(href=original.buildUrl) #{original.buildNo}
           dl
             dt Total Error Count
             dd=totalErrorCount
@@ -21,13 +23,15 @@ html(lang="en")
             dl
               dt #{tool.name} Error Count
               dd=tool.total
-          each tool in tools
             dl
               dt #{tool.name} Version
               dd=tool.version
+            dl
+              dt #{tool.name} Page Count
+              dd=tool.pageCount
 
     article
-      h2 The issues raised
+      h2 Violations
       nav.tabs
         ul
           each tool in tools
@@ -39,11 +43,12 @@ html(lang="en")
             thead
               tr
                 th.path URL Path
-                th.code Code
+                th.code Code (axe docs)
                 th.description Description
                 th.snippet Snippet
                 th.alert Alert Level
                 th.severity Severity
+                th.knownIssue Known Issue
                 th.info Further Information
             tbody
               each path in tool.paths
@@ -51,13 +56,15 @@ html(lang="en")
                   each violation in page.violations
                     tr
                       td.path
-                        a(href=violation.capturedPage,target='_blank')= page.url
-                      td.code=violation.code
+                        a(href=violation.capturedPage,target='_blank') #{path.path}
+                      td.code
+                        a(href=violation.helpUrl,target='_blank') #{violation.code}
                       td.description=violation.description
                       td.snippet
                         span.code=violation.snippet
                       td.alert=violation.alertLevel
                       td.severity=violation.severity
+                      td.knownIssue=violation.govUkKnowIssue
                       td.info
-                        a(href=violation.helpUrl,target='_blank') More information about this violation
+                        span.info #{violation.furtherInformation}
     script!=assets.javascript
