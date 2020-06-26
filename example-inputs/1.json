@@ -1426,7 +1426,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"hasBusinessUniqueId-true\" name=\"hasBusinessUniqueId\" value=\"true\" data-journey-click=\"ated-frontend:click:hasBusinessUniqueId-true\" aria-controls=\"overseas-company-registration\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -2201,7 +2201,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"isAgent-true\" name=\"isAgent\" value=\"true\" data-journey-click=\"ated-frontend:click:isAgent-true\" aria-controls=\"hidden-isAnAgent\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -3011,7 +3011,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"appointAgent-true\" name=\"appointAgent\" value=\"true\" data-journey-click=\"ated-frontend:click:appointAgent-true\" aria-controls=\"hidden-appointAgent-true\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -3025,7 +3025,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"appointAgent-false\" name=\"appointAgent\" value=\"false\" data-journey-click=\"ated-frontend:click:appointAgent-false\" aria-controls=\"hidden-appointAgent-false\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -4150,7 +4150,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"emailConsent-true\" name=\"emailConsent\" value=\"true\" data-journey-click=\"ated-frontend:click:emailConsent-true\" aria-controls=\"email-contact-hidden\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -4587,7 +4587,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"hasBusinessUniqueId-true\" name=\"hasBusinessUniqueId\" value=\"true\" checked=\"checked\" aria-controls=\"overseas-company-registration\" aria-expanded=\"true\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -4782,7 +4782,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"emailConsent-true\" name=\"emailConsent\" value=\"true\" data-journey-click=\"ated-frontend:click:emailConsent-true\" checked=\"checked\" aria-controls=\"email-contact-hidden\" aria-expanded=\"true\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -5098,7 +5098,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"appointAgent-true\" name=\"appointAgent\" value=\"true\" data-journey-click=\"ated-frontend:click:appointAgent-true\" aria-controls=\"hidden-appointAgent-true\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -5112,7 +5112,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"appointAgent-false\" name=\"appointAgent\" value=\"false\" data-journey-click=\"ated-frontend:click:appointAgent-false\" aria-controls=\"hidden-appointAgent-false\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
@@ -6080,7 +6080,7 @@
                   "description": "Attribute “aria-expanded” not allowed on element “input” at this point.",
                   "snippet": "          <input type=\"radio\" id=\"emailConsent-true\" name=\"emailConsent\" value=\"true\" data-journey-click=\"ated-frontend:click:emailConsent-true\" aria-controls=\"email-contact-hidden\" aria-expanded=\"false\">\n\n    ",
                   "helpUrl": "UNDEFINED",
-                  "govUkKnowIssue": "true",
+                  "govUkKnownIssue": "true",
                   "furtherInformation": "This violation is likely to be triggering off the GovUK radio component when this is implemented with an expanding drop down input field.\nDesign System Ref: https://design-system.service.gov.uk/components/radios/conditional-reveal/index.html \nGovUK Frontend Issue: https://github.com/alphagov/govuk-frontend/issues/979"
                 },
                 {
