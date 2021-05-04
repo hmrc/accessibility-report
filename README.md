@@ -1,3 +1,5 @@
+**The contents of this repo has been moved to accessibility-assessment repo.**
+
 
 # accessibility-report
 
